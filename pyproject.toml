@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[project]
+name = "py_project_template"
+version = "0.1.0"
+description = "Template basico para desenvolvimento de aplicações python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE.md"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Natural Language :: Portuguese (Brazilian)",
+]
+
+dependencies = [
+    "dynaconf",
+]
+
+[project.optional-dependencies]
+dev = ["ipdb", "ipython",]
+doc = ["mkdocs", "mkdocs-material"]
+test = ["pytest", "pytest-cov"]
+lint = ["flake8", "flake8-docstrings", "pyproject-flake8", "black", "isort"]
+
+[project.scripts]
+engage = "app:core.Core"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.flake8]
+exclude = [".venv","build", "migrations"]
+max-line-lenght = 79
+
+[tool.black]
+line-length = 79
+target-version = ["py310"]
+extend-exclude = '''/(
+    \.eggs
+    | \.git
+    | \.venv
+    | venv
+    | _build
+    | build
+    | dist
+    | migrations)/'''
+
+[tool.isort]
+profile = "black"
+src_paths = ["app", "tests"]
+multi_line_output = 3
+
+[tool.coverage.run]
+omit = [
+    "src/app/__main__.py"
+]
+
+[project.urls]
+homepage = "https://vf79.com.br/projetos/py_project_template"
+repository = "https://github.com/vf79/py_project_template"

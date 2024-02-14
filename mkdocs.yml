@@ -1,0 +1,29 @@
+site_name: VF79 Python Project Template
+theme:
+  name: material
+  language: pt-BR
+  # custom_dir: overrides
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode  
+    # Palette toggle for light mode
+    - scheme: default
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+  font:
+    text: IBM Plex Mono
+    code: Urbanist
+  
+  features:
+    - navigation.indexes
+
+
+  
